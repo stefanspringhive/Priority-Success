@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priority Success Associates — Change Your Mind. Change Your Life.</title>
+<meta name="description" content="Compassionate outpatient therapy and peer support services in Charlotte, NC. Individual, couples, family and youth therapy, plus peer support and recovery services.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-deep:#163B2E;
+    --green-mid:#2F5D45;
+    --green-tint:#E7EEE7;
+    --gold:#C79A3F;
+    --gold-soft:#E7CE97;
+    --cream:#FBF6EC;
+    --cream-2:#F3ECDC;
+    --charcoal:#2A2620;
+    --white:#FFFFFF;
+    --line:rgba(42,38,32,0.12);
+    --shadow: 0 20px 50px -25px rgba(22,59,46,0.35);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 10px;
+    --maxw: 1240px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    color:var(--charcoal);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.12;
+    margin:0 0 0.5em 0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 1em 0;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+  ::selection{background:var(--gold-soft); color:var(--green-deep);}
+
+  :focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:15px 28px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.98rem;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--green-deep);
+    color:var(--cream);
+  }
+  .btn-primary:hover{background:var(--green-mid); transform:translateY(-2px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--green-deep);
+    border-color:var(--green-deep);
+  }
+  .btn-ghost:hover{background:var(--green-deep); color:var(--cream); transform:translateY(-2px);}
+  .btn-gold{
+    background:var(--gold);
+    color:var(--green-deep);
+  }
+  .btn-gold:hover{background:var(--gold-soft); transform:translateY(-2px);}
+  .btn-on-dark{
+    background:transparent;
+    color:var(--cream);
+    border-color:rgba(251,246,236,0.5);
+  }
+  .btn-on-dark:hover{background:var(--cream); color:var(--green-deep); border-color:var(--cream);}
+
+  /* Header */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(251,246,236,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 32px;
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:46px; width:auto;}
+  .brand-text{display:flex; flex-direction:column; line-height:1.1;}
+  .brand-text .name1{font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem; color:var(--green-deep);}
+  .brand-text .name2{font-size:0.68rem; letter-spacing:0.06em; color:var(--green-mid);}
+
+  nav.primary-nav{display:flex; gap:34px;}
+  nav.primary-nav a{
+    font-size:0.96rem;
+    font-weight:500;
+    color:var(--charcoal);
+    position:relative;
+    padding:4px 0;
+  }
+  nav.primary-nav a::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-2px;
+    height:2px;
+    background:var(--gold);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .2s ease;
+  }
+  nav.primary-nav a:hover::after{transform:scaleX(1);}
+
+  .header-actions{display:flex; align-items:center; gap:18px;}
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  .menu-toggle span{
+    display:block;
+    width:24px;
+    height:2px;
+    background:var(--green-deep);
+    margin:5px 0;
+    transition:.25s;
+  }
+
+  .mobile-nav{
+    display:none;
+    flex-direction:column;
+    background:var(--cream);
+    border-top:1px solid var(--line);
+    padding:10px 32px 22px;
+  }
+  .mobile-nav a{
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-weight:500;
+  }
+  .mobile-nav .btn{margin-top:14px; justify-content:center;}
+  body.nav-open .mobile-nav{display:flex;}
+
+  @media (max-width:900px){
+    nav.primary-nav, .header-actions .btn{display:none;}
+    .menu-toggle{display:block;}
+  }
+
+  /* Section labels */
+  .eyebrow{
+    display:inline-block;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--green-mid);
+    margin-bottom:14px;
+    position:relative;
+    padding-left:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    position:absolute;
+    left:0; top:50%;
+    width:10px; height:2px;
+    background:var(--gold);
+    transform:translateY(-50%);
+  }
+
+  /* HERO */
+  .hero{
+    padding:64px 0 100px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 4.6vw, 3.9rem);
+    color:var(--green-deep);
+    max-width:12ch;
+  }
+  .hero .lede{
+    font-size:1.2rem;
+    color:var(--green-mid);
+    font-weight:500;
+    max-width:34ch;
+    margin-bottom:18px;
+  }
+  .hero .body-copy{
+    max-width:46ch;
+    color:#4b463d;
+    margin-bottom:32px;
+  }
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+
+  .hero-visual{
+    position:relative;
+    isolation:isolate;
+  }
+  .blob{
+    position:absolute;
+    inset:-8% -8% -8% -2%;
+    background:var(--green-tint);
+    border-radius:62% 38% 55% 45% / 48% 45% 55% 52%;
+    z-index:-1;
+  }
+  .hero-photo{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    aspect-ratio:4/4.6;
+  }
+  .hero-photo img{
+    width:100%; height:100%; object-fit:cover;
+    filter:sepia(18%) saturate(115%) hue-rotate(70deg) brightness(0.97);
+  }
+  .hero-badge{
+    position:absolute;
+    bottom:-24px; left:-24px;
+    background:var(--cream);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow);
+    padding:18px 22px;
+    max-width:230px;
+    border:1px solid var(--line);
+  }
+  .hero-badge .stat{
+    font-family:'Fraunces',serif;
+    font-size:1.9rem;
+    color:var(--green-deep);
+    font-weight:600;
+  }
+  .hero-badge .stat-label{font-size:0.85rem; color:#5a564c;}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr; gap:40px;}
+    .hero-visual{order:-1; max-width:420px; margin:0 auto;}
+    .hero-badge{left:12px; bottom:-18px; padding:14px 16px;}
+  }
+
+  /* INTRO */
+  .intro{padding:90px 0; background:var(--cream);}
+  .intro .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .intro h2{font-size:clamp(2rem, 3vw, 2.7rem); color:var(--green-deep); max-width:14ch;}
+  .intro-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 28px;
+    margin-top:26px;
+  }
+  .intro-point{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    font-size:0.98rem;
+    font-weight:500;
+    color:#3d3a33;
+  }
+  .intro-point svg{flex-shrink:0; margin-top:2px;}
+  .intro-photo{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    aspect-ratio:5/4.4;
+    box-shadow:var(--shadow);
+  }
+  .intro-photo img{width:100%; height:100%; object-fit:cover; filter:sepia(15%) saturate(110%) hue-rotate(70deg) brightness(0.98);}
+
+  @media (max-width:900px){
+    .intro .grid{grid-template-columns:1fr;}
+    .intro-photo{order:-1;}
+    .intro-points{grid-template-columns:1fr;}
+  }
+
+  /* SERVICES */
+  .services{padding:100px 0; background:var(--cream-2);}
+  .services-head{max-width:640px; margin-bottom:52px;}
+  .services-head h2{font-size:clamp(2rem,3.2vw,2.8rem); color:var(--green-deep);}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .service-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:32px 28px;
+    border:1px solid var(--line);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .service-card:hover{transform:translateY(-4px); box-shadow:var(--shadow);}
+  .service-icon{
+    width:52px; height:52px;
+    border-radius:14px;
+    background:var(--green-tint);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px;
+    color:var(--green-deep);
+  }
+  .service-card h3{font-size:1.18rem; color:var(--green-deep); margin-bottom:8px;}
+  .service-card p{font-size:0.95rem; color:#524e44; margin-bottom:16px;}
+  .service-card .learn{
+    font-size:0.92rem; font-weight:600; color:var(--green-mid);
+    display:inline-flex; align-items:center; gap:6px;
+  }
+
+  @media (max-width:1000px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:640px){.services-grid{grid-template-columns:1fr;}}
+
+  /* FEATURED CARE - alternating */
+  .featured{padding:100px 0; background:var(--cream);}
+  .featured .grid{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    gap:64px;
+    align-items:center;
+  }
+  .featured-photo{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    aspect-ratio:5/4.6;
+    box-shadow:var(--shadow);
+  }
+  .featured-photo img{width:100%; height:100%; object-fit:cover; filter:sepia(15%) saturate(110%) hue-rotate(70deg) brightness(0.98);}
+  .featured h2{font-size:clamp(2rem,3vw,2.7rem); color:var(--green-deep); max-width:14ch;}
+  .point-list{margin-top:28px; display:flex; flex-direction:column; gap:22px;}
+  .point{
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:16px;
+  }
+  .point-mark{
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--green-deep);
+    color:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+  }
+  .point h4{font-size:1.05rem; margin-bottom:4px; color:var(--green-deep);}
+  .point p{margin:0; font-size:0.95rem; color:#524e44;}
+
+  @media (max-width:900px){
+    .featured .grid{grid-template-columns:1fr;}
+    .featured-photo{order:-1;}
+  }
+
+  /* MISSION / VISION */
+  .mission{
+    background:var(--green-deep);
+    color:var(--cream);
+    padding:110px 0;
+    text-align:center;
+  }
+  .mission .wrap{max-width:820px;}
+  .mission .eyebrow{color:var(--gold-soft);}
+  .mission .eyebrow::before{background:var(--gold);}
+  .mission h2{color:var(--cream); font-size:clamp(1.9rem,3vw,2.4rem);}
+  .mission blockquote{
+    margin:22px 0 0;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(1.3rem,2.4vw,1.7rem);
+    line-height:1.5;
+    color:var(--cream);
+  }
+
+  .vision{
+    background:var(--cream-2);
+    padding:100px 0;
+  }
+  .vision .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .vision h2{color:var(--green-deep); font-size:clamp(1.9rem,3vw,2.4rem);}
+  .vision blockquote{
+    margin:18px 0 0;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.25rem;
+    color:#3d3a33;
+    line-height:1.55;
+  }
+  .vision-graphic{
+    aspect-ratio:1/1;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--gold-soft), var(--green-tint) 70%);
+    position:relative;
+  }
+  .vision-graphic::after{
+    content:"";
+    position:absolute;
+    inset:14%;
+    border:2px solid rgba(22,59,46,0.25);
+    border-radius:50%;
+  }
+  @media (max-width:900px){.vision .grid{grid-template-columns:1fr;} .vision-graphic{order:-1; max-width:260px; margin:0 auto;}}
+
+  /* HOW IT WORKS */
+  .how{padding:110px 0; background:var(--cream);}
+  .how-head{max-width:600px; margin:0 auto 64px; text-align:center;}
+  .how-head h2{color:var(--green-deep); font-size:clamp(2rem,3.2vw,2.7rem);}
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    position:relative;
+  }
+  .step{
+    padding:0 28px;
+    text-align:left;
+    position:relative;
+  }
+  .step-num{
+    font-family:'Fraunces',serif;
+    font-size:2.6rem;
+    font-weight:600;
+    color:var(--gold);
+    margin-bottom:14px;
+    line-height:1;
+  }
+  .step h3{color:var(--green-deep); font-size:1.2rem;}
+  .step p{color:#524e44; font-size:0.95rem;}
+  .steps::before{
+    content:"";
+    position:absolute;
+    top:22px;
+    left:calc(100%/6);
+    right:calc(100%/6);
+    height:2px;
+    background:repeating-linear-gradient(to right, var(--gold) 0 8px, transparent 8px 16px);
+  }
+  @media (max-width:800px){
+    .steps{grid-template-columns:1fr; gap:44px;}
+    .steps::before{display:none;}
+  }
+
+  /* PEER SUPPORT */
+  .peer{
+    padding:100px 0;
+    background:var(--green-deep);
+    color:var(--cream);
+  }
+  .peer .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .peer-photo{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    aspect-ratio:5/4.4;
+    box-shadow:0 20px 50px -20px rgba(0,0,0,0.5);
+  }
+  .peer-photo img{width:100%; height:100%; object-fit:cover; filter:sepia(10%) saturate(120%) brightness(0.9);}
+  .peer .eyebrow{color:var(--gold-soft);}
+  .peer .eyebrow::before{background:var(--gold);}
+  .peer h2{color:var(--cream); font-size:clamp(2rem,3.2vw,2.6rem); max-width:14ch;}
+  .peer p.body-copy{color:rgba(251,246,236,0.85); max-width:46ch;}
+  @media (max-width:900px){.peer .grid{grid-template-columns:1fr;} .peer-photo{order:-1;}}
+
+  /* WHO WE SUPPORT */
+  .who{padding:100px 0; background:var(--cream-2);}
+  .who-head{max-width:600px; margin:0 auto 52px; text-align:center;}
+  .who-head h2{color:var(--green-deep); font-size:clamp(2rem,3.2vw,2.7rem);}
+  .who-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+  }
+  .who-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:26px 18px;
+    text-align:center;
+  }
+  .who-card svg{margin:0 auto 14px;}
+  .who-card h4{font-size:1rem; color:var(--green-deep); margin:0;}
+  @media (max-width:1000px){.who-grid{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:640px){.who-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* TESTIMONIALS */
+  .testimonials{padding:100px 0; background:var(--cream);}
+  .testi-head{max-width:600px; margin:0 auto 52px; text-align:center;}
+  .testi-head h2{color:var(--green-deep); font-size:clamp(2rem,3.2vw,2.7rem);}
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .testi-card{
+    background:var(--white);
+    border:1px dashed var(--line);
+    border-radius:var(--radius-md);
+    padding:30px 26px;
+  }
+  .testi-quote{font-size:1.7rem; color:var(--gold); font-family:'Fraunces',serif; line-height:1;}
+  .testi-card p{color:#7a766b; font-style:italic; font-size:0.98rem;}
+  .testi-name{font-size:0.88rem; font-weight:600; color:var(--green-mid);}
+  @media (max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* FINAL CTA */
+  .final-cta{
+    background:var(--green-deep);
+    color:var(--cream);
+    padding:90px 0;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .final-cta::before{
+    content:"";
+    position:absolute;
+    width:520px; height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(199,154,63,0.25), transparent 70%);
+    top:-260px; right:-160px;
+  }
+  .final-cta .wrap{position:relative;}
+  .final-cta h2{color:var(--cream); font-size:clamp(2.1rem,3.6vw,3rem); max-width:16ch; margin:0 auto 16px;}
+  .final-cta p{max-width:52ch; margin:0 auto 34px; color:rgba(251,246,236,0.85);}
+  .final-cta .hero-ctas{justify-content:center;}
+
+  /* FAQ */
+  .faq{padding:100px 0; background:var(--cream-2);}
+  .faq .wrap{max-width:800px;}
+  .faq-head{margin-bottom:44px;}
+  .faq-head h2{color:var(--green-deep); font-size:clamp(2rem,3.2vw,2.6rem);}
+  .faq-item{
+    border-bottom:1px solid var(--line);
+  }
+  .faq-q{
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:22px 4px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    cursor:pointer;
+    font-family:'Fraunces', serif;
+    font-size:1.08rem;
+    color:var(--green-deep);
+  }
+  .faq-q .plus{
+    flex-shrink:0;
+    width:26px; height:26px;
+    border-radius:50%;
+    border:1.5px solid var(--green-deep);
+    position:relative;
+  }
+  .faq-q .plus::before, .faq-q .plus::after{
+    content:"";
+    position:absolute;
+    background:var(--green-deep);
+    top:50%; left:50%;
+  }
+  .faq-q .plus::before{width:10px; height:1.5px; transform:translate(-50%,-50%);}
+  .faq-q .plus::after{width:1.5px; height:10px; transform:translate(-50%,-50%); transition:transform .2s ease;}
+  .faq-item.open .faq-q .plus::after{transform:translate(-50%,-50%) rotate(90deg) scaleY(0);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .28s ease;
+  }
+  .faq-a p{padding:0 4px 22px; color:#524e44; font-size:0.96rem; max-width:64ch;}
+
+  /* CONTACT */
+  .contact{padding:100px 0; background:var(--cream);}
+  .contact .grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:64px;
+  }
+  .contact h2{color:var(--green-deep); font-size:clamp(2rem,3.2vw,2.6rem);}
+  .contact-info{margin-top:26px; display:flex; flex-direction:column; gap:20px;}
+  .contact-info .row{display:flex; gap:14px; align-items:flex-start;}
+  .contact-info .row svg{flex-shrink:0; margin-top:2px; color:var(--green-mid);}
+  .contact-info .row div{font-size:0.98rem;}
+  .contact-info .row a{color:var(--green-deep); font-weight:600;}
+  .contact-note{
+    margin-top:26px;
+    font-size:0.85rem;
+    color:#8a8578;
+    border-left:2px solid var(--gold);
+    padding-left:14px;
+  }
+
+  .contact-form{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:36px;
+    box-shadow:var(--shadow);
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;
+    font-size:0.86rem;
+    font-weight:600;
+    color:var(--green-deep);
+    margin-bottom:6px;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;
+    padding:12px 14px;
+    border-radius:var(--radius-sm);
+    border:1.5px solid var(--line);
+    font-family:'Work Sans', sans-serif;
+    font-size:0.96rem;
+    background:var(--cream);
+    color:var(--charcoal);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;
+    border-color:var(--green-mid);
+  }
+  .field textarea{resize:vertical; min-height:110px;}
+  .radio-group{display:flex; gap:18px; flex-wrap:wrap;}
+  .radio-group label{
+    display:flex; align-items:center; gap:6px;
+    font-size:0.92rem; font-weight:500; color:var(--charcoal);
+  }
+  @media (max-width:900px){
+    .contact .grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+
+  /* FOOTER */
+  footer{
+    background:var(--charcoal);
+    color:var(--cream);
+    padding:64px 0 28px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:48px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(251,246,236,0.14);
+  }
+  .footer-brand{display:flex; gap:12px; align-items:center; margin-bottom:14px;}
+  .footer-brand img{height:42px;}
+  .footer-brand .name1{font-family:'Fraunces',serif; font-weight:600; color:var(--cream); font-size:1.05rem;}
+  footer .tagline{color:var(--gold-soft); font-style:italic; font-family:'Fraunces',serif; font-size:1rem;}
+  footer h5{font-size:0.85rem; letter-spacing:0.03em; color:var(--gold-soft); margin-bottom:16px; font-family:'Work Sans',sans-serif; font-weight:600;}
+  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;}
+  footer ul a{color:rgba(251,246,236,0.78); font-size:0.94rem;}
+  footer ul a:hover{color:var(--cream);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    padding-top:24px;
+    font-size:0.84rem;
+    color:rgba(251,246,236,0.55);
+  }
+  .footer-bottom .legal-links{display:flex; gap:20px; flex-wrap:wrap;}
+  @media (max-width:800px){.footer-grid{grid-template-columns:1fr; gap:32px;}}
+
+  .fade-in{
+    animation:fadeUp .7s ease both;
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#home" class="brand">
+      <img src="assets/logo.png" alt="Priority Success Associates logo">
+    </a>
+    <nav class="primary-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#peer-support">Peer Support</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#peer-support">Peer Support</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-primary">Get Started</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>Change Your Mind. Change Your Life.</h1>
+        <p class="lede">Compassionate support for meaningful change, personal growth, and stronger relationships.</p>
+        <p class="body-copy">Priority Success Associates provides compassionate outpatient therapy and peer support services designed to help individuals and families recognize their strengths, develop practical skills, overcome challenges, and create meaningful change.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="#services" class="btn btn-ghost">Explore Our Services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="blob"></div>
+        <div class="hero-photo">
+          <img src="https://picsum.photos/seed/psa-hero-family/900/1040" alt="A family sharing a calm, hopeful moment together">
+        </div>
+        <div class="hero-badge">
+          <div class="stat">7</div>
+          <div class="stat-label">therapy &amp; peer support services under one roof</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro" id="about">
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">Who we are</span>
+        <h2>Support that meets you where you are</h2>
+        <p class="body-copy">We believe change happens when people feel understood, not judged. Our clinicians and peer professionals work alongside individuals and families to uncover strengths already present, build practical skills for everyday life, and move steadily toward the future they want.</p>
+        <div class="intro-points">
+          <div class="intro-point">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5L8 15L17 5" stroke="#163B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Compassionate, judgment-free care</span>
+          </div>
+          <div class="intro-point">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5L8 15L17 5" stroke="#163B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Accessible outpatient support</span>
+          </div>
+          <div class="intro-point">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5L8 15L17 5" stroke="#163B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Rooted in individual &amp; family growth</span>
+          </div>
+          <div class="intro-point">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10.5L8 15L17 5" stroke="#163B2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Practical, everyday skills</span>
+          </div>
+        </div>
+      </div>
+      <div class="intro-photo">
+        <img src="https://picsum.photos/seed/psa-intro-talk/900/800" alt="Two people in a warm, supportive conversation">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="services-head">
+        <span class="eyebrow">How we can help</span>
+        <h2>Personalized support for every step forward</h2>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.7 3 5 6.5 5c1.9 0 3.3 1 4.5 2.4C12.2 6 13.6 5 15.5 5 19 5 21.5 8.7 19.5 12.5 17 16.65 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>Outpatient Therapy</h3>
+          <p>Professional therapy designed to help clients address emotional concerns, stress, anxiety, depression, relationship difficulties, life transitions, substance use concerns, and other challenges affecting everyday life.</p>
+          <a href="#" class="learn">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4S18.8 16.4 20 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Individual Therapy</h3>
+          <p>One-on-one therapy focused on each client's individual needs, strengths, concerns, and personal goals.</p>
+          <a href="#" class="learn">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8.5" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 20c0.9-3.6 3-5.4 5.6-5.4 1.7 0 3.1 0.8 4 2M13 20c0.6-2.7 2.3-4 4.4-4 1.9 0 3.4 1.1 4.1 3.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3>Couples Therapy</h3>
+          <p>Therapy designed to help couples strengthen communication, work through conflict, improve connection, and develop healthier relationship patterns.</p>
+          <a href="#" class="learn">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 3 8v3c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V8l-9-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>Family Therapy</h3>
+          <p>Support for families experiencing communication difficulties, changing family roles, conflict, reunification concerns, or other challenges affecting family relationships.</p>
+          <a href="#" class="learn">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M7 5.5l10-1M6 20.5l12-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <h3>Youth &amp; Adolescent Therapy</h3>
+          <p>Age-appropriate therapy addressing emotional, social, behavioral, family, and school-related concerns.</p>
+          <a href="#" class="learn">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 21v-6a3 3 0 1 1 6 0v6M4 21h16M6 21V9.5L12 5l6 4.5V21" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3>Peer Support Services</h3>
+          <p>Individualized support from trained peer professionals who use lived experience to encourage recovery, strengthen self-advocacy, support personal goals, build independence, and connect individuals with community resources.</p>
+          <a href="#" class="learn">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20 10 8l4 6 3-5 3 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Substance Use &amp; Recovery Support</h3>
+          <p>Therapy and peer support for individuals working through substance use concerns, recovery, relapse prevention, and challenges associated with maintaining positive life changes.</p>
+          <a href="#" class="learn">Learn more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED CARE -->
+  <section class="featured">
+    <div class="wrap grid">
+      <div class="featured-photo">
+        <img src="https://picsum.photos/seed/psa-featured-care/900/820" alt="A counselor listening attentively to a client">
+      </div>
+      <div>
+        <span class="eyebrow">Our approach</span>
+        <h2>Care designed around you</h2>
+        <p class="body-copy">Every person's journey is different. Our approach focuses on understanding your unique needs, recognizing your strengths, and providing practical support that helps you move forward.</p>
+        <div class="point-list">
+          <div class="point">
+            <div class="point-mark">1</div>
+            <div>
+              <h4>Personalized Support</h4>
+              <p>Care shaped around your individual needs and goals.</p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="point-mark">2</div>
+            <div>
+              <h4>Practical Tools</h4>
+              <p>Develop skills that can help you navigate everyday challenges.</p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="point-mark">3</div>
+            <div>
+              <h4>Meaningful Progress</h4>
+              <p>Build healthier relationships, greater confidence, independence, and lasting change.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="wrap">
+      <span class="eyebrow">Our mission</span>
+      <h2>Why we do this work</h2>
+      <blockquote>&ldquo;Our mission is to provide compassionate, accessible outpatient therapy and peer support services that empower individuals and families to overcome challenges, recognize their strengths, develop practical skills, and create meaningful change in their lives.&rdquo;</blockquote>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="vision">
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">Our vision</span>
+        <h2>The future we're working toward</h2>
+        <blockquote>&ldquo;Our vision is for individuals and families to have the support, tools, and opportunities they need to experience personal growth, stronger relationships, greater independence, and lasting success.&rdquo;</blockquote>
+      </div>
+      <div class="vision-graphic" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="resources">
+    <div class="wrap">
+      <div class="how-head">
+        <span class="eyebrow">Getting started</span>
+        <h2>Getting started can be simple</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Reach Out</h3>
+          <p>Take the first step by contacting Priority Success Associates.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Discover Your Needs</h3>
+          <p>We'll learn more about your goals, concerns, and the type of support that may be right for you.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Move Forward</h3>
+          <p>Begin working toward meaningful personal growth, healthier relationships, stronger skills, and positive change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEER SUPPORT -->
+  <section class="peer" id="peer-support">
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">Peer support</span>
+        <h2>You don't have to navigate it alone</h2>
+        <p class="body-copy">Peer support provides individualized encouragement from trained peer professionals who use lived experience to help individuals work toward recovery, self-advocacy, independence, personal goals, and community connection.</p>
+        <a href="#contact" class="btn btn-on-dark">Learn About Peer Support</a>
+      </div>
+      <div class="peer-photo">
+        <img src="https://picsum.photos/seed/psa-peer-support/900/820" alt="Two peers offering each other encouragement and support">
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SUPPORT -->
+  <section class="who">
+    <div class="wrap">
+      <div class="who-head">
+        <span class="eyebrow">Who we support</span>
+        <h2>Support for individuals and families</h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#163B2E" stroke-width="1.6"/><path d="M5 20c1.2-3.6 4-5.4 7-5.4S18.8 16.4 20 20" stroke="#163B2E" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h4>Individuals</h4>
+        </div>
+        <div class="who-card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8.5" r="3" stroke="#163B2E" stroke-width="1.6"/><circle cx="16" cy="9.5" r="2.4" stroke="#163B2E" stroke-width="1.6"/><path d="M3.5 20c0.9-3.6 3-5.4 5.6-5.4 1.7 0 3.1 0.8 4 2M13 20c0.6-2.7 2.3-4 4.4-4 1.9 0 3.4 1.1 4.1 3.3" stroke="#163B2E" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h4>Couples</h4>
+        </div>
+        <div class="who-card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 3 3 8v3c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V8l-9-5Z" stroke="#163B2E" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <h4>Families</h4>
+        </div>
+        <div class="who-card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M7 5.5l10-1M6 20.5l12-1" stroke="#163B2E" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="#163B2E" stroke-width="1.6"/></svg>
+          <h4>Youth &amp; Adolescents</h4>
+        </div>
+        <div class="who-card">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 20 10 8l4 6 3-5 3 11" stroke="#163B2E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h4>Individuals Working Toward Recovery</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="testi-head">
+        <span class="eyebrow">In their words</span>
+        <h2>Real support. Meaningful change.</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-quote">&ldquo;</div>
+          <p>Client testimonial will be added here.</p>
+          <div class="testi-name">— Name, Service</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">&ldquo;</div>
+          <p>Client testimonial will be added here.</p>
+          <div class="testi-name">— Name, Service</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">&ldquo;</div>
+          <p>Client testimonial will be added here.</p>
+          <div class="testi-name">— Name, Service</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>Your next step starts here</h2>
+      <p>Whether you're looking for individual therapy, family support, couples counseling, youth services, peer support, or recovery support, Priority Success Associates is here to help you move forward.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-gold">Get Started</a>
+        <a href="#contact" class="btn btn-on-dark">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="faq-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions? We're here to help.</h2>
+      </div>
+      <div id="faqList">
+        <div class="faq-item">
+          <button class="faq-q"><span>What services do you provide?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Who can receive services?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>What is outpatient therapy?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>What is peer support?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you provide individual therapy?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you provide couples and family therapy?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you work with youth and adolescents?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>How do I get started?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>How can I contact Priority Success Associates?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Details to be added.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2>Let's start the conversation</h2>
+        <div class="contact-info">
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" stroke="#2F5D45" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" stroke="#2F5D45" stroke-width="1.6"/></svg>
+            <div>Priority Success Associates<br>2442 Elendil Lane<br>Charlotte, NC 28269</div>
+          </div>
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-1 1-1h3l2 5-2 1.5c1 2.5 2.5 4 5 5L14.5 14l5 2v3s0 1-1 1c-8 0-14.5-6.5-14.5-15Z" stroke="#2F5D45" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <div><a href="tel:7043221178">704-322-1178</a><br><a href="tel:9804512344">980-451-2344</a></div>
+          </div>
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#2F5D45" stroke-width="1.6"/><path d="M3.5 6 12 13 20.5 6" stroke="#2F5D45" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div><a href="mailto:toppriority2021@gmail.com">toppriority2021@gmail.com</a></div>
+          </div>
+        </div>
+        <p class="contact-note">Address and ZIP code to be verified before this site is published.</p>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="name" required>
+          </div>
+          <div class="field">
+            <label for="fphone">Phone</label>
+            <input type="tel" id="fphone" name="phone">
+          </div>
+        </div>
+        <div class="field">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" required>
+        </div>
+        <div class="field">
+          <label>Preferred Contact Method</label>
+          <div class="radio-group">
+            <label><input type="radio" name="contact-method" value="phone" checked> Phone</label>
+            <label><input type="radio" name="contact-method" value="email"> Email</label>
+            <label><input type="radio" name="contact-method" value="text"> Text</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fservice">Service of Interest</label>
+          <select id="fservice" name="service">
+            <option>Outpatient Therapy</option>
+            <option>Individual Therapy</option>
+            <option>Couples Therapy</option>
+            <option>Family Therapy</option>
+            <option>Youth &amp; Adolescent Therapy</option>
+            <option>Peer Support Services</option>
+            <option>Substance Use &amp; Recovery Support</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fmessage">Message</label>
+          <textarea id="fmessage" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Priority Success Associates logo">
+        </div>
+        <p class="tagline">"Change Your Mind. Change Your Life."</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#peer-support">Peer Support</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:7043221178">704-322-1178</a></li>
+          <li><a href="tel:9804512344">980-451-2344</a></li>
+          <li><a href="mailto:toppriority2021@gmail.com">toppriority2021@gmail.com</a></li>
+          <li>2442 Elendil Lane, Charlotte, NC 28269</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Priority Success Associates. All rights reserved.</div>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuToggle = document.getElementById('menuToggle');
+  menuToggle.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+    const expanded = document.body.classList.contains('nav-open');
+    menuToggle.setAttribute('aria-expanded', expanded);
+  });
+  document.querySelectorAll('.mobile-nav a').forEach(a => {
+    a.addEventListener('click', () => document.body.classList.remove('nav-open'));
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        a.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
